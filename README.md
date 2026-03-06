@@ -13,6 +13,18 @@ La visualización se realiza con WebGL mediante la librería 3d-force-graph (bas
 - Expandir conexiones (K-hop): cambia el nivel de exploración alrededor del nodo seleccionado (K=1→4).
 - Resumen automático: estadísticas básicas del grafo (top nodos/verbos).
 
+## App web sin cargar nada
+<img width="1919" height="1092" alt="image" src="https://github.com/user-attachments/assets/ae6ef869-7303-4ce5-98fd-9acb9871a31c" />
+
+## App web con json cargado
+<img width="1919" height="1085" alt="image" src="https://github.com/user-attachments/assets/5bf86230-f34a-4b37-828c-cb1ced1e54f1" />
+
+## App web expandiendo conexiones
+<img width="1919" height="1019" alt="image" src="https://github.com/user-attachments/assets/5436cb83-733c-4f08-aec4-cdd154bdccfc" />
+
+## App web - Resumen
+<img width="1919" height="1082" alt="image" src="https://github.com/user-attachments/assets/e8a16b76-7743-4aa6-b5e8-3dacfd266646" />
+
 ## Tecnologías
 
 - **Front-End:** HTML, CSS, JavaScript (vanilla)
