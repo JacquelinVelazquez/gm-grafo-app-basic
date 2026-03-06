@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Grafos v1.0</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <!-- Topbar (solo contadores) -->
+    <header class="topbar">
+      <div class="topStats">
+        <span>• Nodos: <b id="statNodes">0</b></span>
+        <span>• Conexiones: <b id="statLinks">0</b></span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="brand">Generador de<br />Grafos v1.0</div>
+
+        <button class="sideBtn" id="btnNew">➕ Nueva Consulta</button>
+        <button class="sideBtn" id="btnUploadOpen">📎 Cargar Documento</button>
+
+        <div class="box">
+          <div class="boxTitle">Historial</div>
+          <div id="historyList" class="historyList">
+            <div class="hint">Aún no hay consultas.</div>
+          </div>
+        </div>
+
+        <div class="footerNote">Generador de grafos v1.0</div>
+      </aside>
+
+      <!-- Center -->
+      <section class="center">
+        <div class="centerHeader">Visualización Grafo 3D</div>
+
+        <!-- Dropzone -->
+        <div id="dropZone" class="dropZone">
+          <div class="dropCard">
+            <div class="dropIcon"></div>
+            <div class="dropTitle">Arrastre un archivo</div>
+            <div class="dropSub">o ingrese un enlace</div>
+
+            <div class="row">
+              <input id="urlInput" class="urlInput" placeholder="https://.../archivo.json" />
+              <button id="btnLoadUrl" class="btn primary">Cargar</button>
+            </div>
+
+            <div class="row">
+              <button id="btnPickFile" class="btn">Elegir archivo JSON</button>
+              <input id="fileInput" type="file" accept=".json,application/json" hidden />
+            </div>
+
+            <div id="uploadMsg" class="uploadMsg"></div>
+          </div>
+        </div>
+
+        <!-- Graph -->
+        <div id="graph3d" class="graph3d"></div>
+
+        <!-- Bottom bar (solo UI) -->
+        <div class="bottomBar">
+          <input id="queryInput" class="queryInput" placeholder="Ingrese su consulta (cypher)" />
+          <button id="btnDoc" class="docBtn" title="Cargar JSON">📄</button>
+        </div>
+      </section>
+
+      <!-- Right panel -->
+      <aside class="rightPanel">
+        <div class="rightTitle">Información Grafo Visualizado</div>
+
+        <div class="infoBlock">
+          <div class="infoLabel">Nombre:</div>
+          <div id="infoName" class="infoValue">(sin cargar)</div>
+        </div>
+
+        <div class="infoBlock">
+          <div class="infoLabel">Fecha:</div>
+          <div id="infoDate" class="infoValue">—</div>
+        </div>
+
+        <div class="infoBlock">
+          <div class="infoLabel">Conceptos (nodos):</div>
+          <div id="infoNodes" class="infoValue">0</div>
+        </div>
+
+        <div class="infoBlock">
+          <div class="infoLabel">Relaciones (conexiones):</div>
+          <div id="infoLinks" class="infoValue">0</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="rightTitleSmall">Relacionados</div>
+        <ul id="relatedList" class="relatedList">
+          <li class="muted">Cargue un grafo para ver relaciones.</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <button id="btnExpand" class="btn wide">Expandir Conexiones (K=1)</button>
+        <button id="btnSummary" class="btn wide soft">Ver Resumen (Auto)</button>
+
+        <div class="muted small" style="margin-top: 10px;">
+          Resumen (Auto) = estadística simple, no IA real (se conecta después).
+        </div>
+      </aside>
+    </main>
+
+    <!-- Modal simple (solo para Resumen) -->
+    <div id="modal" class="modal hidden">
+      <div class="modalCard">
+        <div class="modalHeader">
+          <div id="modalTitle" class="modalTitle">Resumen</div>
+          <button id="modalClose" class="modalClose">✕</button>
+        </div>
+        <div id="modalBody" class="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/3d-force-graph"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "gm-grafo-app",
+  "version": "1.0.0",
+  "description": "App web: carga de JSON y visualización 3D de grafos",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
