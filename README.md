@@ -43,19 +43,20 @@ npm run dev
 
 
 ## Formato esperado del JSON (ejemplo)
+```texto
 {
   "choca": ["coche","edificio"],
   "muerde": ["perro","pelota"],
   "tiene": ["usuario","perro"]
 }
-
+```
 ### También se soporta formato con múltiples pares por verbo:
-
+```texto
 {
   "choca": [["coche","edificio"], ["auto","poste"]],
   "tiene": [["usuario","perro"], ["usuario","coche"]]
 }
-
+```
 
 ## Cómo usar la app
 - Abre la app en localhost
